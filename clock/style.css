@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #efeeec;
+  transition: background .5s;
+  position: relative;
+}
+
+.wrapper--dark {
+  background: #162447;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px #FAFAFA solid;
+  box-shadow:  
+    -8px -8px 15px #F8F8F6, 
+    15px 15px 20px #E1E1DF,
+    inset -8px -8px 15px #F8F8F6, 
+    inset 15px 15px 20px #E1E1DF;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s;
+  transition-property: border box-shadow;
+}
+
+.clock--dark {
+  border: 3px #18264C solid;
+  box-shadow:  
+    -8px -8px 15px #1B2C58, 
+    15px 15px 20px #101A33,
+    inset -8px -8px 15px #1B2C58, 
+    inset 15px 15px 20px #101A33;
+}
+
+.clock__dial {
+  width: inherit;
+  height: inherit;
+  filter: brightness(.5);
+  transition: .5s;
+}
+
+.clock__dial--dark {
+  filter: brightness(.2) invert(1);
+}
+
+.clock::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f0134d;
+  position: absolute;
+  z-index: 100;
+}
+
+.clock__sec {
+  width: 2px;
+  background: #f0134d;
+  height: 43%;
+  top: 17%;
+  position: absolute;
+  transform-origin: 50% 76.5%;
+  z-index: 90;
+}
+
+.clock__min {
+  width: 4px;
+  background: black;
+  height: 32%;
+  top: 18%;
+  border-radius: 2px;
+  position: absolute;
+  transform-origin: bottom;
+  transition: background .5s;
+}
+
+.clock__min--dark {
+  background: white;
+}
+
+.clock__hour {
+  width: 6px;
+  background: black;
+  border-radius: 2px;
+  height: 23%;
+  top: 27%;
+  position: absolute;
+  transform-origin: bottom;
+  transition: background .5s;
+}
+
+.clock__hour--dark {
+  background: white;
+}
+
+.theme-ch {
+  font-family: Consolas;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 30px;
+  display: flex;
+  text-decoration: none;
+  color: #0C0C0C;
+  letter-spacing: 2px;
+  line-height: 25px;
+  transition: color .5s;
+}
+
+.theme-ch--dark {
+  color: white;
+}
+
+.theme-ch > .dark {
+  color: white;
+  position: relative;
+  left: -30px;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.theme-ch--dark > .dark {
+  opacity: 1;
+}
+
+.theme-ch > .white {
+  position: relative;
+  left: 12px;
+  transition: opacity .2s;
+}
+
+.theme-ch--dark > .white {
+  opacity: 0;
+}
+
+.theme-ch::before {
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0C0C0C;
+  margin-right: 10px;
+  transition: background .5s;
+}
+
+.theme-ch--dark::before {
+  background: white;
+}
+
